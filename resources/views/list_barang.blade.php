@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html>
 <head>
@@ -27,4 +28,12 @@
 </table>
 
 </body>
+=======
+<html>
+<div>
+    <h1>List Barang</h1>
+    <p>Kode Barang: {{$id}}</p>
+    <p>Nama Barang: {{$nama}}</p>
+</div>
+>>>>>>> 6328723 (MVC Attendance Management System)
 </html>

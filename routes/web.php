@@ -7,7 +7,13 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\AttendanceController;
 
+/*
+|--------------------------------------------------------------------------
+| Web Routes
+|--------------------------------------------------------------------------
+*/
 
+// Home
 Route::get('/', [HomeController::class, 'index']);
 
 // Contact
@@ -23,7 +29,7 @@ Route::get('/user/{id}', function ($id) {
     return 'User dengan ID ' . $id;
 });
 
-
+// Admin group
 Route::prefix('admin')->group(function () {
 
     Route::get('/dashboard', function () {
@@ -36,17 +42,27 @@ Route::prefix('admin')->group(function () {
 
 });
 
+/*
+|--------------------------------------------------------------------------
+| Praktikum List Barang
+|--------------------------------------------------------------------------
+*/
+
+// Versi fleksibel (dari GitHub)
+Route::get('/listbarang/{id}/{nama}', [ListBarangController::class, 'tampilkan']);
+
+// Versi sederhana (punya kamu)
 Route::get('/barang', [ListBarangController::class, 'tampilkan']);
 
+// View statis
 Route::view('/home', 'home');
 Route::view('/about', 'about');
 Route::view('/product', 'product');
 Route::view('/register', 'register');
 
-
 /*
 |--------------------------------------------------------------------------
-| PBL - SISTEM KEHADIRAN
+| PBL - Sistem Manajemen Kehadiran
 |--------------------------------------------------------------------------
 */
 
