@@ -9,7 +9,7 @@ use App\Http\Controllers\AttendanceController;
 
 /*
 |--------------------------------------------------------------------------
-| Web Routes
+| HALAMAN UTAMA
 |--------------------------------------------------------------------------
 */
 
@@ -28,8 +28,16 @@ Route::get('/welcome', function () {
 Route::get('/user/{id}', function ($id) {
     return 'User dengan ID ' . $id;
 });
-
 // Admin group
+=======
+
+/*
+|--------------------------------------------------------------------------
+| ADMIN (GROUP ROUTE)
+|--------------------------------------------------------------------------
+*/
+
+>>>>>>> a1441ec (update routes web lengkap praktikum dan PBL)
 Route::prefix('admin')->group(function () {
 
     Route::get('/dashboard', function () {
@@ -42,6 +50,7 @@ Route::prefix('admin')->group(function () {
 
 });
 
+
 /*
 |--------------------------------------------------------------------------
 | Praktikum List Barang
@@ -50,6 +59,12 @@ Route::prefix('admin')->group(function () {
 
 // Versi fleksibel (dari GitHub)
 Route::get('/listbarang/{id}/{nama}', [ListBarangController::class, 'tampilkan']);
+=======
+| PRAKTIKUM 4 - LIST BARANG
+|--------------------------------------------------------------------------
+*/
+
+Route::get('/barang', [ListBarangController::class, 'tampilkan']);
 
 // Versi sederhana (punya kamu)
 Route::get('/barang', [ListBarangController::class, 'tampilkan']);
@@ -66,6 +81,23 @@ Route::view('/register', 'register');
 |--------------------------------------------------------------------------
 */
 
+=======
+| HALAMAN WAJIB PRAKTIKUM (VIEW SAJA)
+|--------------------------------------------------------------------------
+*/
+
+// Ini WAJIB dari modul
+Route::view('/home', 'home');
+Route::view('/about', 'about');
+Route::view('/product', 'product');
+Route::view('/register', 'register');
+
+
+/*
+|--------------------------------------------------------------------------
+| PBL - SISTEM KEHADIRAN
+|--------------------------------------------------------------------------
+*/
 // Login
 Route::get('/login', [LoginController::class, 'index']);
 
