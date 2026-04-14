@@ -3,12 +3,13 @@
 @section('content')
 
 <div class="card">
-    <h1>Login</h1>
+    <h1>Register</h1>
 
+    <input type="text" placeholder="Nama">
     <input type="email" placeholder="Email">
     <input type="password" placeholder="Password">
 
-    <button>Login</button>
+    <button>Daftar</button>
 </div>
 
 @endsection

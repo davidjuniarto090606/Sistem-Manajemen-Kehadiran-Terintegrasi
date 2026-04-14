@@ -7,6 +7,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\AttendanceController;
 
+
 /*
 |--------------------------------------------------------------------------
 | HALAMAN UTAMA
@@ -56,6 +57,8 @@ Route::prefix('admin')->group(function () {
 
 // Versi fleksibel (dari GitHub)
 Route::get('/listbarang/{id}/{nama}', [ListBarangController::class, 'tampilkan']);
+/*
+|--------------------------------------------------------------------------
 | PRAKTIKUM 4 - LIST BARANG
 |--------------------------------------------------------------------------
 */
@@ -76,6 +79,7 @@ Route::view('/register', 'register');
 | PBL - Sistem Manajemen Kehadiran
 |--------------------------------------------------------------------------
 */
+/*
 | HALAMAN WAJIB PRAKTIKUM (VIEW SAJA)
 |--------------------------------------------------------------------------
 */
@@ -100,3 +104,16 @@ Route::get('/dashboard', [DashboardController::class, 'index']);
 
 // Attendance
 Route::get('/attendance', [AttendanceController::class, 'index']);
+Route::post('/attendance/masuk', [AttendanceController::class, 'masuk']);
+Route::get('/attendance/pulang/{id}', [AttendanceController::class, 'pulang']);
+// HALAMAN WAJIB PRAKTIKUM
+
+Route::view('/home', 'home');
+Route::view('/about', 'about');
+Route::view('/product', 'product');
+Route::view('/contact', 'contact');
+Route::view('/register', 'register');
+
+// Yang pakai controller
+Route::get('/login', [LoginController::class, 'index']);
+Route::get('/dashboard', [DashboardController::class, 'index']);

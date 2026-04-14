@@ -3,8 +3,8 @@
 @section('content')
 
 <div class="card">
-    <h1>Dashboard</h1>
-    <p>Total Kehadiran: {{ $total ?? 0 }}</p>
+    <h1>Product</h1>
+    <p>Fitur sistem absensi digital.</p>
 </div>
 
 @endsection
